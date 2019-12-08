@@ -34,8 +34,10 @@ const Playlist = (props) => {
     // the variable 'track' as props. Go look it up!
     return (
       <Track
-        key={track.id}
+        key={i}
         {...track}
+        updateFavStatus={() => props.updateFavStatus(i)}
+        newTopTrack={() => props.newTopTrack(i)}
       />
     );
   });
@@ -56,6 +58,8 @@ const Playlist = (props) => {
 Playlist.propTypes = {
   tracks: PropTypes.array,
   side: PropTypes.string,
+  updateFavStatus: PropTypes.func,
+  newTopTrack: PropTypes.func,
 }
 
 export default Playlist;
