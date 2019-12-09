@@ -38,6 +38,7 @@ const Playlist = (props) => {
         {...track}
         updateFavStatus={() => props.updateFavStatus(i)}
         newTopTrack={() => props.newTopTrack(i)}
+        swapLists={() => props.swapLists(i)}
       />
     );
   });
@@ -60,6 +61,7 @@ Playlist.propTypes = {
   side: PropTypes.string,
   updateFavStatus: PropTypes.func,
   newTopTrack: PropTypes.func,
+  swapLists: PropTypes.func
 }
 
 export default Playlist;
